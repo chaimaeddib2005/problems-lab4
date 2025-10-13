@@ -4,13 +4,26 @@ import java.util.Scanner;
 public class IntegerListTest
 {
     static IntegerList list = new IntegerList(10);
+
     static Scanner scan = new Scanner(System.in);
     //-------------------------------------------------------
 // Create a list, then repeatedly print the menu and do what the
 // user asks until they quit
 //-------------------------------------------------------
     public static void main(String[] args)
-    {
+    {   list.addElement(5);
+        list.addElement(3);
+        list.addElement(2);
+        list.addElement(4);
+        list.addElement(6);
+        list.addElement(8);
+        list.addElement(9);
+        list.addElement(10);
+        list.addElement(11);
+        list.addElement(12);
+        list.removeAll(5);
+        list.removeAll(113);
+
         printMenu();
         int choice = scan.nextInt();
         while (choice != 0)

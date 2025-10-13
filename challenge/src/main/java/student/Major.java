@@ -9,6 +9,9 @@ public class Major {
     private int studentCount;
 
     public Major(String code, String name) {
+            this.code = code;
+            this.name = name;
+           this.id = nextId++;
 
     }
 

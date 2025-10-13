@@ -7,11 +7,27 @@ public class Person {
     protected String secondName;
     protected String phone;
     protected String email;
-
+    public Person(){}
     public Person(String firstName, String secondName, String telephone, String email) {
         this.id = nextId++;
         this.firstName = firstName;
-        // add others
+        this.secondName = secondName;
+        this.phone = telephone;
+        this.email = email;
+    }
+    public static  int getNextId() {
+        return nextId;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", secondName='" + secondName + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
 
