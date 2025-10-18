@@ -18,6 +18,21 @@ public class Person {
     public static  int getNextId() {
         return nextId;
     }
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getSecondName() {
+        return secondName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
 
     @Override
     public String toString() {

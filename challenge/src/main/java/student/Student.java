@@ -7,12 +7,18 @@ public class Student extends Person {
     public Student(String nom, String prenom, String telephone, String email, String cne, Major major) {
         super(nom, prenom, telephone, email);
         this.cne = cne;
-        this.major = major;
+        if(major.getStudentCount() < 50){
+            this.major = major;
+            major.addStudent(this);
+            }
+        else{
+            this.major = null;
+        }
 
     }
     public Student(String nom, String prenom, String telephone, String email, String cne) {
-        super(nom, prenom, telephone, email);
-        this.cne = cne;
+
+        this(nom, prenom, telephone, email, cne, Major.computer_science);
 
     }
 
@@ -42,8 +48,12 @@ public class Student extends Person {
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
                 ", cne='" + cne + '\'' +
-                ", major=" + major.getName() +
+                ", major=" + (major != null ? major.getName() : "None") +
                 '}';
+   }
+   public String getFullFormattedName(){
+        return String.format("%s, %s", firstName.toUpperCase(), secondName);
+
    }
 }
 
